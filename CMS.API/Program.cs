@@ -58,6 +58,11 @@ try
     services.AddScoped<IPayementRepository, PayementRepository>();
     services.AddScoped<IPlannerRepository, PlannerRepository>();
     services.AddScoped<IPlannerSpeakerRepository, PlannerSpeakerRepository>();
+    services.AddScoped<IEventAttendanceRepository, EventAttendanceRepository>();
+    services.AddScoped<IEventCategoryRepository, EventCategoryRepository>();
+    services.AddScoped<IPartnerEventRepository, PartnerEventRepository>();
+    services.AddScoped<ISponsorEventRepository, SponsorEventRepository>();
+
 
     var app = builder.Build();
 

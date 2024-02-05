@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMS.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240205082337_initial")]
+    [Migration("20240205103208_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -489,11 +489,11 @@ namespace CMS.API.Migrations
 
             modelBuilder.Entity("CMS.API.Entities.SponsorEvent", b =>
                 {
-                    b.Property<int>("SponsorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SponsorId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("EventId")
                         .HasColumnType("int");
@@ -501,16 +501,16 @@ namespace CMS.API.Migrations
                     b.Property<int?>("PlannerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SponsorId1")
+                    b.Property<int>("SponsorId")
                         .HasColumnType("int");
 
-                    b.HasKey("SponsorId");
+                    b.HasKey("Id");
 
                     b.HasIndex("EventId");
 
                     b.HasIndex("PlannerId");
 
-                    b.HasIndex("SponsorId1");
+                    b.HasIndex("SponsorId");
 
                     b.ToTable("SponsorEvents", (string)null);
                 });
@@ -707,7 +707,7 @@ namespace CMS.API.Migrations
 
                     b.HasOne("CMS.API.Entities.Sponsor", "Sponsor")
                         .WithMany("SponsorEvents")
-                        .HasForeignKey("SponsorId1")
+                        .HasForeignKey("SponsorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

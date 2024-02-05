@@ -366,15 +366,15 @@ namespace CMS.API.Migrations
                 name: "SponsorEvents",
                 columns: table => new
                 {
-                    SponsorId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SponsorId1 = table.Column<int>(type: "int", nullable: false),
+                    SponsorId = table.Column<int>(type: "int", nullable: false),
                     EventId = table.Column<int>(type: "int", nullable: false),
                     PlannerId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SponsorEvents", x => x.SponsorId);
+                    table.PrimaryKey("PK_SponsorEvents", x => x.Id);
                     table.ForeignKey(
                         name: "FK_SponsorEvents_Events_EventId",
                         column: x => x.EventId,
@@ -387,8 +387,8 @@ namespace CMS.API.Migrations
                         principalTable: "Planners",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_SponsorEvents_Sponsors_SponsorId1",
-                        column: x => x.SponsorId1,
+                        name: "FK_SponsorEvents_Sponsors_SponsorId",
+                        column: x => x.SponsorId,
                         principalTable: "Sponsors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -485,9 +485,9 @@ namespace CMS.API.Migrations
                 column: "PlannerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SponsorEvents_SponsorId1",
+                name: "IX_SponsorEvents_SponsorId",
                 table: "SponsorEvents",
-                column: "SponsorId1");
+                column: "SponsorId");
         }
 
         /// <inheritdoc />

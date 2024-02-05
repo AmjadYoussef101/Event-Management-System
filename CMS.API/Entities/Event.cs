@@ -11,7 +11,7 @@ namespace CMS.API.Entities
         public string Name { get; set; }
         public string ImageName { get; set; }
 
-        [NotMapped]
+        [NotMapped] 
         public IFormFile Image { get; set; }
         public ICollection<Planner> Planners { get; set; }
         public ICollection<EventAttendance> Attendances { get; set; }

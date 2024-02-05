@@ -17,6 +17,11 @@ namespace CMS.API.Mapper
             CreateMap<PaymentDTO, Payement>();
             CreateMap<PlannerDTO, Planner>();
             CreateMap<PlannerSpeakerDTO, PlannerSpeaker>();
+            CreateMap<EventAttendanceDTO, EventAttendance>();
+            CreateMap<EventCategoryDTO, EventCategory>();
+            CreateMap<PartnerEventDTO, PartnerEvent>();
+            CreateMap<SponsorEventDTO, SponsorEvent>();
+
 
             CreateMap<ApplicationSettings, ApplicationSettingsDTO>();
             CreateMap<Category, CategoryDTO>();
@@ -27,6 +32,10 @@ namespace CMS.API.Mapper
             CreateMap<Payement, PaymentDTO>();
             CreateMap<Planner, PlannerDTO>();
             CreateMap<PlannerSpeaker,  PlannerSpeakerDTO>();
+            CreateMap<EventAttendance, EventAttendanceDTO>();
+            CreateMap<EventCategory, EventCategoryDTO>();
+            CreateMap<PartnerEvent, PartnerEventDTO>();
+            CreateMap<SponsorEvent, SponsorEventDTO>();
 
         }
     }
